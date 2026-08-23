@@ -1,1 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Feliz Cumpleaños! ✨🌸</title>
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap)" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #fff5f7 0%, #fde2e4 40%, #e2ece9 100%);
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+      padding: 20px;
+    }
+
+    .floating-flowers {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .flower-item {
+      position: absolute;
+      font-size: 24px;
+      animation: floatUp 8s infinite linear;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(105vh) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.8;
+      }
+      80% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .card-container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 550px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(230, 150, 170, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.6);
+      padding: 40px 30px;
+      text-align: center;
+      border: 2px solid rgba(255, 182, 193, 0.4);
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .corner-floral {
+      position: absolute;
+      font-size: 32px;
+      pointer-events: none;
+    }
+    .top-left { top: -15px; left: -15px; transform: rotate(-20deg); }
+    .top-right { top: -15px; right: -15px; transform: rotate(20deg); }
+    .bottom-left { bottom: -15px; left: -15px; transform: rotate(-70deg); }
+    .bottom-right { bottom: -15px; right: -15px; transform: rotate(70deg); }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 18px;
+      background: linear-gradient(135deg, #ffb3c6, #ff8fa3);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 12px rgba(255, 143, 163, 0.3);
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: #c94b68;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(201, 75, 104, 0.1);
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      color: #7a5a65;
+      font-size: 1rem;
+      margin-bottom: 25px;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .flower-frame {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 65px;
+      box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.8), 0 10px 25px rgba(255, 182, 193, 0.4);
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.9);
+      border-left: 3px solid #ff8fa3;
+      border-right: 3px solid #ff8fa3;
+      border-radius: 16px;
+      padding: 25px 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    }
+
+    .poem-line {
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      color: #4a3b40;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .poem-line strong {
+      color: #c94b68;
+    }
+
+    .btn-surprise {
+      background: linear-gradient(135deg, #ff758f, #ff4d6d);
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(255, 77, 109, 0.35);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-surprise:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 14px 25px rgba(255, 77, 109, 0.45);
+      background: linear-gradient(135deg, #ff8fa3, #ff597b);
+    }
+
+    .btn-surprise:active {
+      transform: translateY(1px);
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(60, 30, 40, 0.5);
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: #fff8f9;
+      border-radius: 24px;
+      padding: 35px 25px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      transform: scale(0.8) translateY(30px);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+      border: 2px solid #ffccd5;
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-card h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color: #c94b68;
+      margin-bottom: 15px;
+    }
+
+    .modal-card p {
+      color: #5a4249;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .btn-close {
+      background: #ffb3c6;
+      color: #5a1827;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-close:hover {
+      background: #ff8fa3;
+      color: white;
+    }
+
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 99;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floating-flowers" id="flowersContainer"></div>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="card-container">
+    <div class="corner-floral top-left">🌸</div>
+    <div class="corner-floral top-right">🌺</div>
+    <div class="corner-floral bottom-left">🌷</div>
+    <div class="corner-floral bottom-right">🌸</div>
+
+    <span class="badge">Un día radiante</span>
+    <h1>¡Feliz Cumpleaños!</h1>
+    <p class="subtitle">Celebrando la belleza de tu existencia</p>
+
+    <div class="flower-frame">
+      💐
+    </div>
+
+    <div class="message-box">
+      <p class="poem-line">"Que tu vida se llene de <strong>flores</strong>,</p>
+      <p class="poem-line">que cada día te regale una <strong>sonrisa</strong>,</p>
+      <p class="poem-line">y que la alegría llene tu corazón de <strong>luz</strong>."</p>
+    </div>
+
+    <button class="btn-surprise" onclick="openSurprise()">
+      <span>✨ Un detalle especial para ti</span>
+    </button>
+  </div>
+
+  <div class="modal-overlay" id="surpriseModal">
+    <div class="modal-card">
+      <div style="font-size: 40px; margin-bottom: 10px;">🌹✨</div>
+      <h2>Para una chica maravillosa</h2>
+      <p>
+        Hoy no es un día cualquiera. El mundo celebra el nacimiento de una persona auténtica, llena de encanto y con una luz especial que ilumina a todos a su alrededor.
+      </p>
+      <p>
+        Deseo de todo corazón que este nuevo año de vida esté repleto de sueños cumplidos, viajes inolvidables, abrazos sinceros y momentos mágicos. ¡Nunca dejes de brillar! 💖
+      </p>
+      <button class="btn-close" onclick="closeSurprise()">Guardar en el corazón 🌸</button>
+    </div>
+  </div>
+
+  <script>
+    const flowerIcons = ['🌸', '🌺', '🌷', '🌼', '✨', '💖', '🌹'];
+    const flowersContainer = document.getElementById('flowersContainer');
+
+    function createFloatingFlowers() {
+      for (let i = 0; i < 25; i++) {
+        const flower = document.createElement('div');
+        flower.className = 'flower-item';
+        flower.innerText = flowerIcons[Math.floor(Math.random() * flowerIcons.length)];
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDuration = (6 + Math.random() * 6) + 's';
+        flower.style.animationDelay = (Math.random() * 5) + 's';
+        flower.style.fontSize = (18 + Math.random() * 20) + 'px';
+        flowersContainer.appendChild(flower);
+      }
+    }
+
+    createFloatingFlowers();
+
+    function openSurprise() {
+      document.getElementById('surpriseModal').classList.add('active');
+      launchConfetti();
+    }
+
+    function closeSurprise() {
+      document.getElementById('surpriseModal').classList.remove('active');
+    }
+
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class PetalParticle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height - canvas.height;
+        this.size = Math.random() * 10 + 6;
+        this.speedY = Math.random() * 3 + 2;
+        this.speedX = Math.random() * 2 - 1;
+        this.angle = Math.random() * 360;
+        this.spin = Math.random() * 4 - 2;
+        this.colors = ['#ffb3c6', '#ff8fa3', '#ff758f', '#ffccd5', '#fff0f3', '#ffd166'];
+        this.color = this.colors[Math.floor(Math.random() * this.colors.length)];
+      }
+
+      update() {
+        this.y += this.speedY;
+        this.x += Math.sin(this.y * 0.01) + this.speedX;
+        this.angle += this.spin;
+      }
+
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate((this.angle * Math.PI) / 180);
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, this.size, this.size / 2, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    function launchConfetti() {
+      particles = [];
+      for (let i = 0; i < 120; i++) {
+        particles.push(new PetalParticle());
+      }
+      animateConfetti();
+    }
+
+    let animationFrame;
+    function animateConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      let activeParticles = false;
+
+      particles.forEach((p) => {
+        p.update();
+        p.draw();
+        if (p.y < canvas.height + 20) {
+          activeParticles = true;
+        }
+      });
+
+      if (activeParticles) {
+        animationFrame = requestAnimationFrame(animateConfetti);
+      }
+    }
+  </script>
+</body>
+  </html>
 
